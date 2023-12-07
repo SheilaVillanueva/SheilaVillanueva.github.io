@@ -8,8 +8,8 @@ body {
 
 #contenedor {
     text-align: center;
-    width: 900;
-    height: 500;
+    width: 900px;
+    height: 500px;
     position: absolute;
     inset: 0;
     margin: auto;
