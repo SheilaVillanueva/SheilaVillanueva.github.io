@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+
+body {
+    background-color: antiquewhite;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+}
+
+#contenedor {
+    text-align: center;
+    width: 900;
+    height: 500;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.contenido {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+    padding: 40px;
+}
+
+#detalles {
+    background-color: #ffffff;
+    color: #26213d;
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+
+#calculadora {
+    background-color: #766aac;
+    color: aliceblue;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+input {
+    width: 65%;
+    padding: 12px 15px;
+    border: black;
+    background-color: #ffffff;
+    border-radius: 30px;
+}
+button{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 12px 35px;
+    border-radius: 30px;
+    background-color:#ffffff;
+    border: 1px solid #000000;
+    color:#26213d;
+    text-transform: uppercase;
+    transition: transform 20ms ease-in;
+    margin-top: 10%;
+}
+button:active{
+    background-color:#000000;
+    transform: scale(0.9);
+}
+#error {
+    color: red;
+    font-weight: 900;
+    display: none;
+}
+
+.resultado {
+    color: #f6a269;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 5px;
+    display: none;
+
+}
+
