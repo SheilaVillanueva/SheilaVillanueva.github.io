@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Raleway:wght@400;600&family=Roboto+Slab&display=swap');
+
 
 body {
     background-color: antiquewhite;
@@ -73,11 +76,19 @@ button:active{
 }
 
 .resultado {
-    color: #f6a269;
+    color: #26213d;
+    font-family: 'Roboto Slab', serif;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 5px;
     display: none;
 
+}
+
+.noValido{
+ color: red;
+ font-family: 'Kanit', sans-serif;
+ font-weight: bolder;
+ font-size: x-large;
 }
 
