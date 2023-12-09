@@ -9,6 +9,7 @@ function calcular(peso) {
     let elementoTres = document.getElementById("mm2");
     var valido = document.getElementById("noValor");
     let volumenDiario;
+    var detalles = document.getElementById("detalles")
     /**
      * El primer if va a analizar si se ingresó algun valor, de no ser el caso 
      * se mostrará un mensaje por pantalla pidiendo que se ingrese un peso.
@@ -65,16 +66,26 @@ function calcular(peso) {
         mantenimientoUno.style.display = "block";
         mm2Uno.style.display = "block";
         valido.style.display = "none";
+
+        detalles.innerHTML =
+            "<li>De 0 Kg a 10 Kg, se calcula 100cc por cada kilo.</li>"+
+        "<li>Se suman 50cc por cada kilo de peso por arriba de 10 Kg, hasta 20 Kg.</li>"+
+        " <li>De 20 Kg para arriba, se suman 20cc por cada kilo adicional.</li>"
+
     } else {
         volumenDiario = ((peso * 4) + 7) / (peso + 90) * 1500;
         mantenimientoUno = (volumenDiario * 1500).toFixed(2);
         mantenimientoDos = (volumenDiario * 2000).toFixed(2);
 
-        elementoDos.innerHTML = "El mantenimiento *1500: " + mantenimientoUno + "cc.  El mantenimiento *2000 es: " + mantenimientoDos + "cc";
+        elementoDos.innerHTML = "El mantenimiento *1500: " + mantenimientoUno + "cc." + "<br>El mantenimiento *2000 es: </br>" + mantenimientoDos + "cc"
         elementoDos.style.display = "block";
         elementoTres.style.display = "none";
 
 
+        detalles.innerHTML =
+            "<h2> Cuando el peso es mayor a 30 kg se mide de manera diferente.</h2>" +
+            "<li>Se calcula la superificie corporal por medio de la siguiente formula: <b> ( (peso * 4) + 7) / (peso + 90) </b> </li>" +
+            "<li>Luego se multiplica el resultado por 2000 o por 1500 según se considere , ambos resultados se encuentran </li>"
     }
 }
 

@@ -28,6 +28,7 @@ body {
     transform: translateY(-50%);
     overflow: hidden;
     padding: 40px;
+    
 }
 
 #detalles {
@@ -79,7 +80,7 @@ button:active{
     color: #26213d;
     font-family: 'Roboto Slab', serif;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 5px;
     display: none;
 
@@ -91,4 +92,6 @@ button:active{
  font-weight: bolder;
  font-size: x-large;
 }
+
+
 
