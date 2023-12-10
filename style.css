@@ -4,7 +4,7 @@
 
 
 body {
-    background-color: antiquewhite;
+    background-color:antiquewhite;
     color: black;
     font-family: 'Raleway', sans-serif;
 }
@@ -40,7 +40,7 @@ body {
 }
 
 #calculadora {
-    background-color: #766aac;
+    background-color: #958eb3;
     color: aliceblue;
     width: 50%;
     height: 100%;
@@ -87,11 +87,8 @@ button:active{
 }
 
 .noValido{
- color: red;
+ color: rgb(255, 0, 64);
  font-family: 'Kanit', sans-serif;
- font-weight: bolder;
- font-size: x-large;
+ font-weight:900;
+ font-size:x-large
 }
-
-
-

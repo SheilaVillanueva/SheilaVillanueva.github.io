@@ -9,18 +9,21 @@ function calcular(peso) {
     let elementoTres = document.getElementById("mm2");
     var valido = document.getElementById("noValor");
     let volumenDiario;
-    var detalles = document.getElementById("detalles")
+    var info = document.getElementById("info")
     /**
      * El primer if va a analizar si se ingresó algun valor, de no ser el caso 
      * se mostrará un mensaje por pantalla pidiendo que se ingrese un peso.
      */
     if (isNaN(peso)) {
-        console.log("Debes ingresar un peso");
-        valido.innerHTML = "Debes ingresar un numero.";
+        console.log("Ingresar el peso");
+        valido.innerHTML = "Ingresar un numero.";
         valido.style.display = "block";
         elementoUno.style.display = "none";
         elementoDos.style.display = "none";
         elementoTres.style.display = "none";
+
+        info.innerHTML =
+            "<h3> Debes cargar un peso válido para poder calcular la hidratación</h3>";
     }
     /**
      * El segundo caso es por si el usuario ingresa un valor menor o igual a cero, en este
@@ -37,6 +40,9 @@ function calcular(peso) {
         /**
          * En el tercer caso se va a evaluar si es el método de Holliday (menos de 30 kilos)
          */
+
+        info.innerHTML =
+            "<h3> Debes cargar un peso válido para poder calcular la hidratación </h3>";
     } else if (peso <= 30) {
 
         if (peso <= 10) {
@@ -67,11 +73,15 @@ function calcular(peso) {
         mm2Uno.style.display = "block";
         valido.style.display = "none";
 
-        detalles.innerHTML =
-            "<li>De 0 Kg a 10 Kg, se calcula 100cc por cada kilo.</li>"+
-        "<li>Se suman 50cc por cada kilo de peso por arriba de 10 Kg, hasta 20 Kg.</li>"+
-        " <li>De 20 Kg para arriba, se suman 20cc por cada kilo adicional.</li>"
-
+        info.innerHTML =
+            "<h2>Holliday-Segar.</h2>" +
+            "<li>De 0 Kg a 10 Kg, se calcula 100cc por cada kilo.</li>" +
+            "<li>Se suman 50cc por cada kilo de peso por arriba de 10 Kg, hasta 20 Kg.</li>" +
+            "<li>De 20 Kg para arriba, se suman 20cc por cada kilo adicional.</li>"
+/**
+ * En este ultimo caso se toma como que el peso es mayor a 30 ya que es el ultimo caso a tener en cuenta,
+ * se utiliza el metodo de superficie corporal
+ */
     } else {
         volumenDiario = ((peso * 4) + 7) / (peso + 90) * 1500;
         mantenimientoUno = (volumenDiario * 1500).toFixed(2);
@@ -82,8 +92,8 @@ function calcular(peso) {
         elementoTres.style.display = "none";
 
 
-        detalles.innerHTML =
-            "<h2> Cuando el peso es mayor a 30 kg se mide de manera diferente.</h2>" +
+        info.innerHTML =
+            "<h2>Método de superificie corporal.</h2>" +
             "<li>Se calcula la superificie corporal por medio de la siguiente formula: <b> ( (peso * 4) + 7) / (peso + 90) </b> </li>" +
             "<li>Luego se multiplica el resultado por 2000 o por 1500 según se considere , ambos resultados se encuentran </li>"
     }
