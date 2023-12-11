@@ -1,4 +1,7 @@
 function calcular(peso) {
+    /**
+     * Primero tenemos la declaración de variables que estaremos utilizando en el código.
+     */
     var peso = document.getElementById("peso");
     peso = parseFloat(peso.value);
     console.log(peso);
@@ -73,15 +76,19 @@ function calcular(peso) {
         mm2Uno.style.display = "block";
         valido.style.display = "none";
 
+        /**
+        * Lo que hace la siguiente parte del código es que cambia la información según el peso que se le pase
+        */
+
         info.innerHTML =
             "<h2>Holliday-Segar.</h2>" +
             "<li>De 0 Kg a 10 Kg, se calcula 100cc por cada kilo.</li>" +
             "<li>Se suman 50cc por cada kilo de peso por arriba de 10 Kg, hasta 20 Kg.</li>" +
             "<li>De 20 Kg para arriba, se suman 20cc por cada kilo adicional.</li>"
-/**
- * En este ultimo caso se toma como que el peso es mayor a 30 ya que es el ultimo caso a tener en cuenta,
- * se utiliza el metodo de superficie corporal
- */
+        /**
+         * En este ultimo caso se toma como que el peso es mayor a 30 ya que es el ultimo caso a tener en cuenta,
+         * se utiliza el metodo de superficie corporal
+         */
     } else {
         volumenDiario = ((peso * 4) + 7) / (peso + 90) * 1500;
         mantenimientoUno = (volumenDiario * 1500).toFixed(2);
@@ -90,13 +97,23 @@ function calcular(peso) {
         elementoDos.innerHTML = "El mantenimiento *1500: " + mantenimientoUno + "cc." + "<br>El mantenimiento *2000 es: </br>" + mantenimientoDos + "cc"
         elementoDos.style.display = "block";
         elementoTres.style.display = "none";
-
+        /**
+         * Lo que hace la siguiente parte del código es que cambia la información según el peso que se le pase
+         */
 
         info.innerHTML =
             "<h2>Método de superificie corporal.</h2>" +
             "<li>Se calcula la superificie corporal por medio de la siguiente formula: <b> ( (peso * 4) + 7) / (peso + 90) </b> </li>" +
             "<li>Luego se multiplica el resultado por 2000 o por 1500 según se considere , ambos resultados se encuentran </li>"
     }
+    /**
+     * El siguiente bloque de codigo hace que al hacer click en el boton de calcular hace un sonido de cliok.
+     */
+    document.getElementById("calcular").addEventListener("click", function(){
+        var sonido= document.getElementById("sonido");
+        sonido.play();
+    });
+
 }
 
 
